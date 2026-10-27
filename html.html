@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Registration</title>
+    </head>
+    <body>
+        <form id = 'registration' onSubmit = "return validateform()">
+            <label> Username: </label>
+            <input type = 'text'  id='username' required>
+            <br><br>
+            <label>Mobile number: </label>
+            <input type = 'text' id='mobile-number' required>
+            <br><br>
+            <label> Email:</label>
+            <input type = 'email' id = 'email' required>
+            <br><br>
+            <label>Event: </label>
+            <select id='event' required>
+                <option value = 'workshop'>workshop</option>
+                <option value = 'seminar'>seminar</option>
+                <option value = 'dance'>dance</option>
+            </select>
+            <br><br>
+            <button type='submit'>Register</button>
+        </form>
+        <script>
+            function validateform(){
+                const phone = document.getElementById('mobile-number');
+                if(!/^\d{10}$/.test(phone.value)){
+                    alert('please enter a vaild phone number');
+                    return false;
+                }else{
+                    alert('form submmitted successfully')
+                    return true;
+                }
+
+            }
+        </script>
+    </body>
+</html>
